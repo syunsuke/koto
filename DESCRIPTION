@@ -1,0 +1,25 @@
+Package: koto
+Title: koto is tools for reading Chikakouji data
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Syunsuke",
+           family = "Fukuda",
+           role = c("aut", "cre"),
+           email = "ok.xmonad@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: R Tools for reading Chikakouji csv data
+  which is published by MLIT. koto is KOuji TOol.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    dplyr,
+    magrittr,
+    readr,
+    stringr,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
