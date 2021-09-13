@@ -40,3 +40,6 @@ vignettes/*.pdf
 .Rproj.user
 
 devwork/
+
+data-raw/csvfiles/*
+data-raw/dl_data/*
