@@ -32,7 +32,7 @@ decode_youto <- function(df, data_year){
     # パターン2 2008〜2017
     ans <- decode_youto_p2(df)
 
-  }else if(data_year %in% c(2019:2030)){
+  }else if(data_year %in% c(2018:2030)){
     # パターン2 2017〜
     ans <- decode_youto_p3(df)
   }
