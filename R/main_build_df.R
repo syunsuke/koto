@@ -45,8 +45,10 @@ build_data <- function(df){
 
   # 建蔽率列を統一
   if("建蔽率" %in% names(df)){
-    df$`建ぺい率` <- df$`建蔽率` %>% as.integer()
+    df$`建ぺい率` <- df$`建蔽率`
   }
+  df$`建ぺい率` <- df$`建ぺい率` %>% as.integer()
+
 
   # 列に駅名が無い場合
   if( ! "駅名" %in% names(df)){
