@@ -12,8 +12,8 @@
 read_kouji_csv <- function(csvfile){
 
   lapply(csvfile, read_kouji_single_csv) %>%
-    dplyr::bind_rows()
-
+    dplyr::bind_rows() %>%
+    dplyr::arrange(date, `所在地コード`, `用途`, `連番`)
 }
 
 # ファイルを一つ受けとってdfを一つ返す

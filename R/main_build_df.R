@@ -254,8 +254,7 @@ build_data <- function(df){
       point_status,
       change_contents,
 
-    ) %>%
-    dplyr::arrange(date, `所在地コード`, `用途`, `連番`)
+    )
 
   return(ans)
 
