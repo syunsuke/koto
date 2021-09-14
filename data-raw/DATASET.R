@@ -35,7 +35,42 @@ csvfiles <- dir("data-raw/csvfiles", full.names = TRUE)
 chikakouji_expdata <- read_kouji_csv(csvfiles)
 
 
-chikakouji_osaka <- chikakouji_expdata %>% add_pointid_col()
+chikakouji_osaka <-
+  chikakouji_expdata %>%
+  add_pointid_col() %>%
+
+  select(date,
+         wareki,
+         std_number,
+         price,
+         mod_rate,
+         `都道府県`,
+         `所在`,
+         `地積`,
+         genkyo,
+         `建物構造`,
+         `周辺の土地の利用の現況`,
+         youto,`bouka`,`建ぺい率`,`容積率`,
+         `駅名`,
+         `駅距離`,
+         `前面道路の幅員`,
+         `側道区分`,
+         long,
+         lat,
+         `市区町村名`,
+         `用途`,`連番`,
+         point_id) %>%
+
+  rename(`価格時点` = date,
+         `和暦` = wareki,
+         `標準地番号` = std_number,
+         `標準地価格` = price,
+         `対前年比` = mod_rate,
+         `利用の現況` = genkyo,
+         `用途地域` = youto,
+         `防火区分` = bouka)
+
+
 
 # １５分程度
 print(proc.time() - start_time)
