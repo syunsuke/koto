@@ -18,6 +18,12 @@ read_kouji_csv <- function(csvfile){
 
 # ファイルを一つ受けとってdfを一つ返す
 read_kouji_single_csv <- function(csvfile){
+  read_all_koujidata(csvfile) %>% build_data()
+}
+
+
+# csvファイルの読み込み処理
+read_all_koujidata <- function(csvfile){
 
   print(sprintf("now reading %s", csvfile))
 
@@ -36,8 +42,8 @@ read_kouji_single_csv <- function(csvfile){
                               `地積`     = readr::col_integer(),
                               `容積率`   = readr::col_integer()
       )) %>%
-    dplyr::filter(!is.na(`所在地コード`))
+    dplyr::filter(!is.na(`所在地コード`)) %>%
+    dplyr::mutate(bind_id = 1:nrow(.))
 
-  #return(ans)
-  build_data(ans)
+  return(ans)
 }
