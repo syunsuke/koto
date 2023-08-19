@@ -122,7 +122,7 @@ url_list_kouji <- function(pref = 27){
 
   ans <- NULL
 
-  for(year in c(58:63,1:31,2020:2022)){
+  for(year in c(58:63,1:31,2020:2023)){
 
     # 平成17年までのファイル名
     if (year %in% c(58:63,1:17)){
