@@ -10,13 +10,14 @@
 # パスはパッケージのトップディレクトリからの相対パス
 
 library(tidyverse)
+library(hash)
 
 start_time <- proc.time()
 
 
-# 大阪の地価公示URLリスト
+# 全国の地価公示URLリスト
+#url_list <- url_list_all_kouji()
 url_list <- url_list_kouji(27)
-
 
 # データのダウンロード
 download_by_urls(url_list, "data-raw/dl_data")
@@ -40,12 +41,14 @@ chikakouji_osaka <-
   add_pointid_col() %>%
 
   select(date,
+         `年次`,
          wareki,
          std_number,
          price,
          mod_rate,
          `都道府県`,
-         `所在`,
+         `所在並びに地番`,
+         `住居表示`,
          `地積`,
          genkyo,
          `建物構造`,
@@ -71,8 +74,6 @@ chikakouji_osaka <-
          `防火区分` = bouka)
 
 
-
-# １５分程度
 print(proc.time() - start_time)
 
 usethis::use_data(chikakouji_osaka, overwrite = TRUE)
