@@ -5,7 +5,7 @@
 \alias{chikakouji_osaka}
 \title{大阪府の地価公示価格.}
 \format{
-A data frame with 64750 rows and 45 variables:
+A data frame with 68180 rows and 27 variables:
 \describe{
 \item{価格時点}{価格時点}
 ...
@@ -24,7 +24,7 @@ A data frame with 64750 rows and 45 variables:
 chikakouji_osaka
 }
 \description{
-1983年から2021年までの大阪府の地価公示価格。
+1983年から2023年までの大阪府の地価公示価格。
 国土交通省が公表している国土数値情報の地価公示に関するデータを
 R言語環境で扱いやすくするために独自に加工したものです。
 }
