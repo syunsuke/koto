@@ -15,6 +15,13 @@
 ###################################################################
 
 # URLのリストをとってデータダウンロードする
+#' Download by URLs list
+#'
+#' @param urls
+#' @param dest_dir
+#'
+#' @return
+#' @export
 download_by_urls <- function(urls, dest_dir = "."){
 
   # dest_dirの確保
@@ -88,6 +95,14 @@ pickup_from_single_zip <- function(zipfile, pattern = "", dest_dir = "."){
   unzip(zipfile = zipfile, files = file_list, junkpaths = TRUE, exdir = dest_dir)
 }
 
+#' pick up specific file from zip archive
+#'
+#' @param zipfiles
+#' @param pattern
+#' @param dest_dir
+#'
+#' @return
+#' @export
 pickup_from_zip <- function(zipfiles, pattern = "", dest_dir = "."){
 
   lapply(zipfiles, pickup_from_single_zip, pattern, dest_dir)
@@ -114,6 +129,12 @@ pickup_from_zip <- function(zipfiles, pattern = "", dest_dir = "."){
 # /L01-[年度]P/L01-[年度]P-[都道府県番号]-[形式].zip
 
 # 都道府県単独の全期間リストを返す
+#' url list of a prefecture
+#'
+#' @param pref prefecuture id
+#'
+#' @return data.frame
+#' @export
 url_list_kouji <- function(pref = 27){
 
   # URLのフォーマットは今の所、変化が無い
@@ -140,6 +161,13 @@ url_list_kouji <- function(pref = 27){
 
 }
 
+# 全都道府県の全期間リストを返す
+#' url list of all prefecture
+#'
+#' @return data.frame
+#' @export
+#'
+#' @examples
 url_list_all_kouji <- function(){
   lapply(1:47, url_list_kouji) %>% unlist()
 }
