@@ -39,7 +39,7 @@ download_by_urls <- function(urls, dest_dir = "."){
     Sys.sleep(0.3)
 
     tryCatch({
-      download.file(url = urls[i], destfile = dest_path)
+      download.file(url = urls[i], mode = "wb", destfile = dest_path)
     },
     error = function(e){
       message("Error!!")
